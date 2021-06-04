@@ -117,7 +117,7 @@ router.get("/forgot_password/:email", async (req, res) => {
   }
 });
 
-router.post("/password_reset/:rnd/:pass", async (req, res) => {
+router.put("/password_reset/:rnd/:pass", async (req, res) => {
   try {
     let client = await MongoClient.connect(dbUrl);
     let db = client.db("urlShortener");
