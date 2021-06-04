@@ -14,6 +14,7 @@ const authorize = require("./authorize");
 app.get("/home", async (req, res) => {
   try {
     let data = await shortUrl.find();
+    res.append("data",data)
     res.status(200).json({
       message: "Your Data is here",
       data,
