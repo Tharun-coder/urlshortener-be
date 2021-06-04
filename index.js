@@ -11,7 +11,7 @@ app.use("/auth", router);
 const shortUrl = require("./models/urlShortener");
 const authorize = require("./authorize");
 
-app.get("/home", async (req, res) => {
+app.get("/home", authorize, async (req, res) => {
   try {
     let data = await shortUrl.find();
     res.status(200).json({
