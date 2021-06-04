@@ -38,7 +38,7 @@ app.post("/home/shorten_url", async (req, res) => {
   }
 });
 
-app.post("/home/shorten_url/:short", async (req, res) => {
+app.put("/home/shorten_url/:short", async (req, res) => {
   try {
     await shortUrl.updateOne(
       { short: req.params.short },
