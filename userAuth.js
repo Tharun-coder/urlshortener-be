@@ -135,9 +135,7 @@ router.put("/password_reset/:rnd/:pass", async (req, res) => {
           { randomString: req.params.rnd },
           { $set: { password: req.params.new_pwd, randomString: "" } }
         );
-      res.append("rnd", req.params.rnd);
-      res.append("new_pass", req.params.pass);
-
+     
       res.status(200).json({
         message: "Password updated successfully",
       });
